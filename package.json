@@ -9,6 +9,7 @@
     "bootstrap-icons": "^1.11.3",
     "cra-template": "1.2.0",
     "react": "^19.0.0",
+    "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
@@ -19,7 +20,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +48,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "babel-jest": "^29.7.0",
+    "gh-pages": "^6.3.0",
     "jest": "^27.5.1",
     "react-redux": "^9.2.0",
     "redux-mock-store": "^1.5.5"

@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, setLogged } from "../store/actions/userActions";
 
 const Login = () => {
   const user = useSelector((state) => state.user.user);
+  const [error, setError] = useState(null);
   const dispatch = useDispatch();
 
   const handleButtonClick = () => {
     console.log("Click");
-    if (user === "Nanitita") dispatch(setLogged());
+    if (user === "Nanitita") {
+      setError(null);
+      dispatch(setLogged());
+    } else {
+      setError("Nome inválido!");
+    }
   };
 
   const handleInputChange = (event) => {
@@ -36,6 +42,7 @@ const Login = () => {
               ENTRAR
             </button>
           </div>
+          {error && <div className="errorClass text-center mt-2">{error}</div>}
         </div>
       </div>
     </section>

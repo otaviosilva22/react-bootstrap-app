@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import store from "./store/store";
-import { AuthProvider } from "./components/AuthProvider";
+import AuthProvider from "./components/AuthProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

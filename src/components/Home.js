@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import img1 from "../assets/images/img1.jpg";
 import img2 from "../assets/images/img2.jpg";
 import img3 from "../assets/images/img3.jpg";
-import img4 from "../assets/images/img4.webp";
+import img4 from "../assets/images/img4.jpg";
+import img5 from "../assets/images/img5.jpg";
 
 const Home = () => {
   const startDate = new Date("2022-03-01T00:00:00");
@@ -34,10 +35,11 @@ const Home = () => {
       setElapsedTime({ years, days, hours, minutes, seconds });
     }, 1000);
 
-    return () => clearInterval(interval); // Limpa o intervalo ao desmontar o componente
+    return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {}, []);
+  const images = [img1, img2, img3, img4, img5];
 
   return (
     <section className="container-fluid">
@@ -70,7 +72,30 @@ const Home = () => {
                     data-bs-slide-to="2"
                     aria-label="Slide 3"
                   ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="3"
+                    aria-label="Slide 4"
+                  ></button>
+                  <button
+                    type="button"
+                    data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide-to="4"
+                    aria-label="Slide 5"
+                  ></button>
                 </div>
+                {/* <div className="carousel-inner">
+                  {images.map((item, index) => (
+                    <div
+                      className={`carousel-item ${index === 0 ? "active" : ""}`}
+                      key={index}
+                    >
+                      <img src={item} className="img_card" alt="..." />
+                    </div>
+                  ))}
+                </div> */}
+
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <img src={img1} className="img_card" alt="..." />
@@ -80,6 +105,12 @@ const Home = () => {
                   </div>
                   <div className="carousel-item">
                     <img src={img3} className="img_card" alt="..." />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img4} className="img_card" alt="..." />
+                  </div>
+                  <div className="carousel-item">
+                    <img src={img5} className="img_card" alt="..." />
                   </div>
                 </div>
               </div>

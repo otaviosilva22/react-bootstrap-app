@@ -95,3 +95,7 @@ body {
 .card_time_final .title_time {
   color: #ffffff;
 }
+
+.errorClass {
+  color: red;
+}
